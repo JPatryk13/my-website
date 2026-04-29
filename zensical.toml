@@ -1,0 +1,17 @@
+[project]
+site_name = "My Website"
+site_description = "Personal website and blog docs"
+site_author = "Patryk Jesionka"
+
+nav = [
+  { "Home" = "index.md" },
+  { "About" = "about.md" },
+]
+
+[project.theme]
+language = "en"
+features = [
+  "navigation.sections",
+  "navigation.top",
+  "search.highlight",
+]
