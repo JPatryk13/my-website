@@ -17,5 +17,5 @@ This is my personal site where I write about product discovery, software and dat
 
 <br>
 
-[Projects](my-website/projects/index.md){ .md-button .md-button--primary }
+[Projects](/my-website/projects/){ .md-button .md-button--primary }
 [LinkedIn :fontawesome-brands-linkedin:](https://www.linkedin.com/in/jpatryk13/){ .md-button }
