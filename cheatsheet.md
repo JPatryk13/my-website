@@ -11,6 +11,21 @@ hide:
 ---
 ```
 
+## Add New Project
+
+Copy this format for future entries:
+
+```md
+## Project Title<small><span style="font-size: 0.65em; color: var(--md-default-fg-color--light);">YYYY-MM-DD</span></small>
+
+
+One or two sentences summary of what you built, explored, or learned.
+
+[Read more](/projects/project-slug)
+```
+
+Using tags can be enabled if the project/post base grows big: https://zensical.org/docs/setup/tags/?h=tags
+
 ## References
 
 [MkDocs Material Plugins](https://squidfunk.github.io/mkdocs-material/plugins/)
