@@ -15,8 +15,7 @@ This is my personal site where I write about product discovery, software and dat
 - Side projects, experiments, and what I am currently learning
 - Practical lessons from turning ideas into useful things
 
-## Explore
+<br>
 
-- [My LinkedIn profile](https://www.linkedin.com/in/jpatryk13/)
-
-*more coming soon*
+[Projects](my-website/projects/index.md){ .md-button .md-button--primary }
+[LinkedIn :fontawesome-brands-linkedin:](https://www.linkedin.com/in/jpatryk13/){ .md-button }

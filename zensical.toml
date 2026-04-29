@@ -59,3 +59,10 @@ toggle.name = "Switch to system preference"
 
 [project.extra]
 generator = false
+
+# Buttons (.md-button) and icon shortcodes (:fontawesome-...:) in Markdown
+[project.markdown_extensions.attr_list]
+
+[project.markdown_extensions.pymdownx.emoji]
+emoji_index = "zensical.extensions.emoji.twemoji"
+emoji_generator = "zensical.extensions.emoji.to_svg"
