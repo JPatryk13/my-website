@@ -1,16 +1,58 @@
 [project]
-site_name = "My Website"
+site_name = "Patryk's Website"
+site_url = "https://jpatryk13.github.io/my-website/"
 site_description = "Personal website and blog docs"
 site_author = "Patryk Jesionka"
+copyright = "&copy; 2026 Patryk Jesionka"
 
 nav = [
   { "Home" = "index.md" },
+  # { "Projects" = [
+  #   { "Project 1" = "projects/project-1.md" },
+  #   { "Project 2" = "projects/project-2.md" },
+  # ] },
 ]
+
+[project.theme.icon]
+logo = "lucide/chess-knight"
 
 [project.theme]
 language = "en"
 features = [
-  "navigation.sections",
+  # Back-to-top button
   "navigation.top",
+  # Highlight search results after following the link from the search results
   "search.highlight",
+  # Instant loading of pages
+  "navigation.instant",
+  # Auto update URL based on section
+  "navigation.tracking",
+  # Top-level sections are rendered on top - as tabs
+  "navigation.tabs",
+  # Tabs are always visible on top
+  "navigation.tabs.sticky",
+  # Breadcrumbs
+  "navigation.path",
+  # Provide context for each section as index.md
+  "navigation.indexes"
 ]
+
+# Palette toggle for automatic mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+# Palette toggle for light mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+# Palette toggle for dark mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
