@@ -5,7 +5,6 @@ site_author = "Patryk Jesionka"
 
 nav = [
   { "Home" = "index.md" },
-  { "About" = "about.md" },
 ]
 
 [project.theme]
