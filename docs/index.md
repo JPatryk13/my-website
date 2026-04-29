@@ -1,3 +1,10 @@
+---
+hide:
+  - navigation
+  - toc
+  - path
+---
+
 # Hi, I am Patryk
 
 This is my personal site where I write about product discovery, software and data work, and the messy path from idea to shipped value.
