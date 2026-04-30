@@ -1,6 +1,8 @@
 # Runtime Type Validation for Python
 
-## 1 Problem
+## Introduction
+
+### Problem
 
 Python's type hints are powerful, but they stop at static analysis. At runtime, they are not enforced. This creates a gap:
 
@@ -16,11 +18,11 @@ list[dict[str, tuple[str, str, bool]]]
 
 Validating structures like this quickly becomes repetitive and error-prone.
 
-## 2 Goal
+### Goal
 
 Explore whether Python's type hint system can be used to provide **lightweight runtime validation**, without introducing heavy schemas or external frameworks.
 
-## 3 Approach
+### Approach
 
 Validify is built around a simple idea:
 
@@ -37,7 +39,9 @@ On top of that core, I added:
 - A manual validation function (`isvalid`)
 - Decorators for functions and classes so checks can run automatically
 
-## 4 How It Works (High-Level)
+## Implementation
+
+### How It Works
 
 1. **Type Parsing**
 
@@ -54,9 +58,9 @@ On top of that core, I added:
   - Function decorators validate arguments at call time
   - Class decorators validate attributes and method inputs
 
-## 5 Example Usage
+### Example Usage
 
-### 5.1 Manual validation
+#### Manual Validation
 
 ```python
 from validify import isvalid
@@ -69,7 +73,7 @@ data = [
 isvalid(data, list[dict[str, str | None]])  # True
 ```
 
-### 5.2 Function validation
+#### Function Validation
 
 ```python
 from validify import func
@@ -82,7 +86,7 @@ process([1, 2, 3])   # OK
 process(["a", "b"])  # TypeError
 ```
 
-### 5.3 Class validation
+#### Class Validation
 
 ```python
 from validify import cls
@@ -95,7 +99,7 @@ Basket([("apple", 2, 1.5)])  # OK
 Basket([("apple", "2", 1.5)])  # TypeError
 ```
 
-## 6 Key Design Decisions
+### Key Design Decisions
 
 1. **Descriptor abstraction**
 
@@ -112,7 +116,9 @@ Basket([("apple", "2", 1.5)])  # TypeError
   - Three layers: core type logic, validation rules, integration (decorators)
   - This made the code easier to reason about and extend
 
-## 7 Trade-offs
+## Evaluation
+
+### Trade-offs
 
 - Nested unions are not fully propagated across all combinations
 - Recursive validation introduces performance cost
@@ -120,7 +126,7 @@ Basket([("apple", "2", 1.5)])  # TypeError
 
 These were intentional trade-offs so I could keep the implementation focused and understandable.
 
-## 8 Known Limitation (Example)
+### Known Limitation
 
 For a type like:
 
@@ -136,7 +142,7 @@ list[tuple[int] | tuple[str]]
 
 This is where the hard part became clear: checking one nested union shape is manageable, but handling equivalent nested forms consistently gets complicated quickly.
 
-## 9 What I'd Improve
+### What I Would Improve
 
 - Extend support for modern typing features (`TypedDict`, `Annotated`)
 - Improve how unions propagate through nested structures
@@ -144,7 +150,9 @@ This is where the hard part became clear: checking one nested union shape is man
 - Make error messages more actionable for developers
 - Explore tighter integration with static type checkers
 
-## 10 Takeaways
+## Reflection
+
+### Takeaways
 
 This project was less about shipping a production-ready library and more about exploring:
 
@@ -158,7 +166,7 @@ It also reinforced a few engineering lessons for me:
 - Making trade-offs explicit in system design
 - Designing tools around developer experience, not just raw capability
 
-## 11 Retrospective
+### Retrospective
 
 At the time of building Validify, I saw it as a strong general-purpose solution for runtime type validation. Since then, my perspective has shifted.
 
@@ -172,7 +180,7 @@ My coding practices have also evolved. If I revisited this project, I would star
 
 Even so, this project still reflects an important phase in my growth, especially in how I think about type systems, abstractions, and trade-offs in Python.
 
-## 12 Links
+## Links
 
 [Repo](https://github.com/JPatryk13/pyvalidify)<br>
 [Package](https://pypi.org/project/pyvalidify/1.0.1/)
