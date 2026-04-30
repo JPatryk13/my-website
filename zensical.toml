@@ -17,6 +17,7 @@ nav = [
 logo = "lucide/chess-knight"
 
 [project.theme]
+favicon = "images/lucide-chess-knight-logo-white-bg.svg"
 language = "en"
 features = [
   # Back-to-top button
