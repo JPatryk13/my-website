@@ -45,18 +45,18 @@ On top of that core, I added:
 
 1. **Type Parsing**
 
-  - Type hints are transformed into `Descriptor` objects
-  - Handles generics (`list[str]`), unions (`str | int`), and nesting
+    - Type hints are transformed into `Descriptor` objects
+    - Handles generics (`list[str]`), unions (`str | int`), and nesting
 
 2. **Validation Engine**
 
-  - Recursively compares runtime values against descriptors
-  - Applies rules based on structure and type relationships
+    - Recursively compares runtime values against descriptors
+    - Applies rules based on structure and type relationships
 
 3. **Integration Layer**
 
-  - Function decorators validate arguments at call time
-  - Class decorators validate attributes and method inputs
+    - Function decorators validate arguments at call time
+    - Class decorators validate attributes and method inputs
 
 ### Example Usage
 
@@ -103,18 +103,18 @@ Basket([("apple", "2", 1.5)])  # TypeError
 
 1. **Descriptor abstraction**
 
-  - I needed one representation for both simple and nested types
-  - This let me separate *type parsing* from *validation logic*
+    - I needed one representation for both simple and nested types
+    - This let me separate *type parsing* from *validation logic*
 
 2. **Decorators over metaprogramming**
 
-  - I chose decorators for readability and explicit usage
-  - I avoided deeper magic (metaclasses, proxies) to keep behavior predictable
+    - I chose decorators for readability and explicit usage
+    - I avoided deeper magic (metaclasses, proxies) to keep behavior predictable
 
 3. **Layered structure**
 
-  - Three layers: core type logic, validation rules, integration (decorators)
-  - This made the code easier to reason about and extend
+    - Three layers: core type logic, validation rules, integration (decorators)
+    - This made the code easier to reason about and extend
 
 ## Evaluation
 
