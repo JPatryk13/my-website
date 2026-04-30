@@ -34,7 +34,11 @@ features = [
   # Breadcrumbs
   "navigation.path",
   # Provide context for each section as index.md
-  "navigation.indexes"
+  "navigation.indexes",
+  # For copy/select/annotate refer to https://zensical.org/docs/authoring/code-blocks/?h=code+
+  "content.code.copy",
+  "content.code.select",
+  "content.code.annotate"
 ]
 
 # Palette toggle for automatic mode
@@ -66,3 +70,12 @@ generator = false
 [project.markdown_extensions.pymdownx.emoji]
 emoji_index = "zensical.extensions.emoji.twemoji"
 emoji_generator = "zensical.extensions.emoji.to_svg"
+
+# Fancy code blocks https://zensical.org/docs/authoring/code-blocks/?h=code+
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.snippets]
+[project.markdown_extensions.pymdownx.superfences]
